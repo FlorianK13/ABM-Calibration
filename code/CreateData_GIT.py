@@ -7,7 +7,6 @@ Created on Tue Aug  4 10:10:59 2020
 """
 
 import numpy as np
-import pandas as pd
 
 def P_gauss(x,sigma=0.7):
     return sigma**2/np.exp(-1/2*sigma**2)*(np.exp(-x**2/(2*sigma**2))-np.exp(-1/(2*sigma**2)))
@@ -27,13 +26,11 @@ def MakeAgentArray(Countypd,Agent_Scale):
 
     Number_Agents=int(AgentsPerCity.sum())
     Agent_Array=np.zeros((Number_Agents,3)).transpose()
-    #Agent_Loc=np.zeros((Number_Agents,2)).transpose()
-
     Agent_Array[0]=np.arange(Number_Agents)   # Give a number to each agent
     Agent_Array=Agent_Array.transpose()
 
 
-    """Here the Landkreis number is given to each agent"""
+    # Here the Landkreis number is given to each agent
     Ag_index=0
     for index,town in enumerate(AgentsPerCity):
         for n in range(int(town)):
