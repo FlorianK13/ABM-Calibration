@@ -54,7 +54,7 @@ def MakeAgentArray(Countypd,Agent_Scale):
     return Agent_Array.transpose()
 
 def Load_PVData():
-    Savename=f"../Data/Timemat_Landkreis_PVCap_OnlyAnzahl_2000-2018"
+    Savename=f"../data/Timemat_Landkreis_PVCap_OnlyAnzahl_2000-2018"
     Timemat=np.load(Savename+".npy")
     
     Timemat_yearly=np.zeros((19,len(Timemat)))
